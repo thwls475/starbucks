@@ -110,3 +110,15 @@ function floatingObject (selector, delay, size) {
 floatingObject('.floating1', 1, 15);
 floatingObject('.floating2', .5, 20);
 floatingObject('.floating3', 1.5, 15);
+
+
+censt spyEl = document.querySelectorAll('section.scroll-spy');
+spyEl.forEach(function (spyEl) {
+    new ScrollMagic
+        .Scene({
+            triggerElement: spyEl, //보여짐 여부를 감시할 여부를 지정
+            triggerHook: .8
+        })
+        .setClassToggle()
+        .addTo();
+});
